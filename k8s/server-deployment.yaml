@@ -8,13 +8,13 @@ spec:
     matchLabels:
       component: server
   template:
-    metadata: 
-      labels: 
+    metadata:
+      labels:
         component: server
     spec:
       containers:
         - name: server
-          image: bitch0mp/multi-server
+          image: rallycoding/multi-server
           ports:
             - containerPort: 5000
           env:
@@ -31,7 +31,7 @@ spec:
             - name: PGDATABASE
               value: postgres
             - name: PGPASSWORD
-              valueFrom: 
+              valueFrom:
                 secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD

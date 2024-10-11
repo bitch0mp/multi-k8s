@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server-deployment
+  name: server
 spec:
   replicas: 3
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: bitch0mp/multi-server
+          image: bitch0mp/server
           ports:
             - containerPort: 5000
           env:

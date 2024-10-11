@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: worker-deployment
+  name: worker
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: bitch0mp/multi-worker
+          image: bitch0mp/worker
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service

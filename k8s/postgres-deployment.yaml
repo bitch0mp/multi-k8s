@@ -14,12 +14,12 @@ spec:
     spec:
       volumes:
         - name: postgres-storage
-          persistentVolumeClaim: 
+          persistentVolumeClaim:
             claimName: database-persistent-volume-claim
       containers:
         - name: postgres
           image: postgres
-          ports: 
+          ports:
             - containerPort: 5432
           volumeMounts:
             - name: postgres-storage
@@ -27,7 +27,7 @@ spec:
               subPath: postgres
           env:
             - name: POSTGRES_PASSWORD
-              valueFrom: 
+              valueFrom:
                 secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD

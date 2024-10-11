@@ -21,7 +21,7 @@ spec:
   # ADD INGRESSCLASSNAME FIELD
   rules:
     - host: upsidedownsamoyeds.com
-    - http:
+      http:
         paths:
           - path: /?(.*)
             # UPDATE PATH
@@ -45,7 +45,7 @@ spec:
                   number: 5000
 
     - host: www.upsidedownsamoyeds.com
-    - http:
+      http:
         paths:
           - path: /?(.*)
             # UPDATE PATH
